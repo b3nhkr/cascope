@@ -215,3 +215,19 @@
   font-style: italic;
   padding: 16px 12px;
 }
+
+.btn-delete {
+  padding: 4px 12px;
+  background: none;
+  border: 1px solid #3f1f1f;
+  border-radius: 6px;
+  color: #f87171;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn-delete:hover {
+  background: #7f1d1d;
+  border-color: #991b1b;
+}
