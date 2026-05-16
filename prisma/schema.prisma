@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Domain {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  audits   Audit[]
+  rankings Ranking[]
+}
+
+model Audit {
+  id        Int      @id @default(autoincrement())
+  domainId  Int
+  score     Float?
+  issues    String?
+  crawledAt DateTime @default(now())
+  createdAt DateTime @default(now())
+
+  domain Domain @relation(fields: [domainId], references: [id], onDelete: Cascade)
+}
+
+model Keyword {
+  id        Int      @id @default(autoincrement())
+  phrase    String   @unique
+  createdAt DateTime @default(now())
+
+  rankings Ranking[]
+}
+
+model City {
+  id        Int      @id @default(autoincrement())
+  name      String
+  state     String?
+  country   String   @default("US")
+  createdAt DateTime @default(now())
+
+  rankings Ranking[]
+
+  @@unique([name, state, country])
+}
+
+model Ranking {
+  id        Int      @id @default(autoincrement())
+  domainId  Int
+  keywordId Int
+  cityId    Int
+  position  Int?
+  url       String?
+  checkedAt DateTime @default(now())
+  createdAt DateTime @default(now())
+
+  domain  Domain  @relation(fields: [domainId], references: [id], onDelete: Cascade)
+  keyword Keyword @relation(fields: [keywordId], references: [id], onDelete: Cascade)
+  city    City    @relation(fields: [cityId], references: [id], onDelete: Cascade)
+
+  @@index([domainId, keywordId, cityId])
+  @@index([checkedAt])
+}
