@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const { PrismaClient } = require('@prisma/client');
 
@@ -18,6 +20,9 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: err.message });
 });
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Cascope API running!', status: 'ok' });
+});
 app.listen(PORT, () => console.log(`cascope running on port ${PORT}`));
 
 module.exports = app;
