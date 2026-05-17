@@ -1,8 +1,9 @@
 node_modules/
 frontend/node_modules/
 .env
-prisma/dev.db
-prisma/dev.db-journal
+*.db
+*.db-journal
 *.db-shm
 *.db-wal
 /tmp/npm-cache
+.claude/
