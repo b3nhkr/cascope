@@ -1,3 +1,5 @@
+const requireAuth = require('../middleware/auth');
+const authRouter = require('./auth');
 const domainsRouter = require('./domains');
 const auditsRouter = require('./audits');
 const keywordsRouter = require('./keywords');
@@ -6,6 +8,10 @@ const rankingsRouter = require('./rankings');
 const auditClientRouter = require('./auditClient');
 
 module.exports = (app, prisma) => {
+  app.use('/api/auth', authRouter(prisma));
+
+  app.use('/api', requireAuth);
+
   app.use('/api/domains', domainsRouter(prisma));
   app.use('/api/audits', auditsRouter(prisma));
   app.use('/api/keywords', keywordsRouter(prisma));

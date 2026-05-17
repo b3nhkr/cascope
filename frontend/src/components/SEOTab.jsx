@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { apiFetch } from '../api';
 import './Tab.css';
 
 export default function SEOTab() {
@@ -11,16 +12,16 @@ export default function SEOTab() {
   const [auditForm, setAuditForm] = useState({ domainId: '', score: '', issues: '' });
 
   function loadAll() {
-    fetch('/api/domains').then(r => r.json()).then(setDomains);
-    fetch('/api/keywords').then(r => r.json()).then(setKeywords);
-    fetch('/api/audits').then(r => r.json()).then(setAudits);
+    apiFetch('/api/domains').then(r => r.json()).then(setDomains);
+    apiFetch('/api/keywords').then(r => r.json()).then(setKeywords);
+    apiFetch('/api/audits').then(r => r.json()).then(setAudits);
   }
 
   useEffect(loadAll, []);
 
   async function addDomain(e) {
     e.preventDefault();
-    await fetch('/api/domains', {
+    await apiFetch('/api/domains', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(domainForm),
@@ -36,7 +37,7 @@ export default function SEOTab() {
 
   async function addKeyword(e) {
     e.preventDefault();
-    await fetch('/api/keywords', {
+    await apiFetch('/api/keywords', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ phrase: phrase.trim() }),
@@ -55,7 +56,7 @@ export default function SEOTab() {
     const issues = auditForm.issues
       ? JSON.stringify(auditForm.issues.split(',').map(s => s.trim()).filter(Boolean))
       : null;
-    await fetch('/api/audits', {
+    await apiFetch('/api/audits', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

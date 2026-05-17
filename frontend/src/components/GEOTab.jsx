@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { apiFetch } from '../api';
 import './Tab.css';
 
 export default function GEOTab() {
@@ -12,9 +13,9 @@ export default function GEOTab() {
   const [rankingForm, setRankingForm] = useState({ domainId: '', keywordId: '', cityId: '', position: '', url: '' });
 
   function loadBase() {
-    fetch('/api/cities').then(r => r.json()).then(setCities);
-    fetch('/api/domains').then(r => r.json()).then(setDomains);
-    fetch('/api/keywords').then(r => r.json()).then(setKeywords);
+    apiFetch('/api/cities').then(r => r.json()).then(setCities);
+    apiFetch('/api/domains').then(r => r.json()).then(setDomains);
+    apiFetch('/api/keywords').then(r => r.json()).then(setKeywords);
   }
 
   function loadRankings() {
@@ -30,7 +31,7 @@ export default function GEOTab() {
 
   async function addCity(e) {
     e.preventDefault();
-    await fetch('/api/cities', {
+    await apiFetch('/api/cities', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(cityForm),
@@ -47,7 +48,7 @@ export default function GEOTab() {
 
   async function addRanking(e) {
     e.preventDefault();
-    await fetch('/api/rankings', {
+    await apiFetch('/api/rankings', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

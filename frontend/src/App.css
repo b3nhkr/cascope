@@ -19,3 +19,31 @@
   letter-spacing: -0.5px;
   color: #7c6aff;
 }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.user-email {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.btn-logout {
+  padding: 6px 14px;
+  background: none;
+  border: 1px solid #2d3148;
+  border-radius: 6px;
+  color: #94a3b8;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.btn-logout:hover {
+  color: #f87171;
+  border-color: #7f1d1d;
+}

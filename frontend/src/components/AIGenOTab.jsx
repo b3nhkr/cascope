@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { apiFetch } from '../api';
 import './Tab.css';
 
 export default function AIGenOTab() {
@@ -13,7 +14,7 @@ export default function AIGenOTab() {
     setError(null);
     setResult(null);
     try {
-      const res = await fetch('/api/audit-client', {
+      const res = await apiFetch('/api/audit-client', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ domainName }),
