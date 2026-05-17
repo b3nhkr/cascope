@@ -29,6 +29,13 @@ export default function App() {
         </div>
       </header>
       <Dashboard />
+      <footer className="app-footer">
+        <span>Mentions légales</span>
+        <span className="footer-sep">·</span>
+        <span>CGV</span>
+        <span className="footer-sep">·</span>
+        <span>Privacy Policy</span>
+      </footer>
     </div>
   );
 }

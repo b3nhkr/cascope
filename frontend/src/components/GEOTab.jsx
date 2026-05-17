@@ -23,7 +23,7 @@ export default function GEOTab() {
     if (filters.domainId) params.set('domainId', filters.domainId);
     if (filters.keywordId) params.set('keywordId', filters.keywordId);
     if (filters.cityId) params.set('cityId', filters.cityId);
-    fetch(`/api/rankings?${params}`).then(r => r.json()).then(setRankings);
+    fetch(`/api/rankings?${params}`).then(r => r.json()).then(data => setRankings(Array.isArray(data) ? data : []));
   }
 
   useEffect(loadBase, []);
@@ -90,7 +90,7 @@ export default function GEOTab() {
         <div className="card">
           <div className="card-label">Avg Position</div>
           <div className="card-value">
-            {rankings.length
+            {Array.isArray(rankings) && rankings.length
               ? (rankings.reduce((s, r) => s + (r.position || 0), 0) / rankings.length).toFixed(1)
               : '—'}
           </div>
@@ -172,7 +172,7 @@ export default function GEOTab() {
       <table className="data-table">
         <thead><tr><th>Domain</th><th>Keyword</th><th>City</th><th>Position</th><th>Checked</th><th></th></tr></thead>
         <tbody>
-          {rankings.length === 0
+          {!Array.isArray(rankings) || rankings.length === 0
             ? <tr><td colSpan={6} className="empty">No rankings match</td></tr>
             : rankings.map(r => (
               <tr key={r.id}>

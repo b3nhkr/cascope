@@ -35,6 +35,7 @@ export default function AuthPage({ onAuth }) {
     <div className="auth-page">
       <div className="auth-card">
         <div className="auth-logo">cascope</div>
+        <p className="auth-tagline">Search intelligence, unified.</p>
         <div className="auth-tabs">
           <button className={`auth-tab${mode === 'login' ? ' active' : ''}`} onClick={() => { setMode('login'); setError(null); }}>Login</button>
           <button className={`auth-tab${mode === 'register' ? ' active' : ''}`} onClick={() => { setMode('register'); setError(null); }}>Register</button>

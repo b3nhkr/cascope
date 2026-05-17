@@ -2,48 +2,82 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: #ffffff;
 }
 
 .app-header {
   display: flex;
   align-items: center;
-  padding: 0 24px;
-  height: 56px;
-  background: #1a1d27;
-  border-bottom: 1px solid #2d3148;
+  padding: 0 40px;
+  height: 60px;
+  background: #ffffff;
+  border-bottom: 1px solid #f3f4f6;
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  color: #7c6aff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  flex-shrink: 0;
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   margin-left: auto;
 }
 
 .user-email {
   font-size: 13px;
-  color: #64748b;
+  color: #9ca3af;
+  font-weight: 400;
 }
 
 .btn-logout {
-  padding: 6px 14px;
+  padding: 6px 16px;
   background: none;
-  border: 1px solid #2d3148;
+  border: 1px solid #e5e7eb;
   border-radius: 6px;
-  color: #94a3b8;
+  color: #6b7280;
   font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
   cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
+  transition: border-color 0.15s, color 0.15s;
 }
 
 .btn-logout:hover {
-  color: #f87171;
-  border-color: #7f1d1d;
+  border-color: #d1d5db;
+  color: #374151;
+}
+
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 18px 40px;
+  border-top: 0.5px solid #e5e7eb;
+  font-size: 11.5px;
+  color: #9ca3af;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.footer-sep {
+  color: #d1d5db;
 }

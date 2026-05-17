@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node src/server.js",
     "start": "node src/server.js",
+    "build": "npm run build --prefix frontend",
     "frontend": "PORT=3001 npm run dev --prefix frontend",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",

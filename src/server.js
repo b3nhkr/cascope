@@ -1,5 +1,5 @@
 
-
+const path = require('path');
 const express = require('express');
 const { PrismaClient } = require('@prisma/client');
 
@@ -20,9 +20,10 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: err.message });
 });
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Cascope API running!', status: 'ok' });
-});
+const buildDir = path.join(__dirname, '..', 'frontend', 'build');
+app.use(express.static(buildDir));
+app.get('*', (req, res) => res.sendFile(path.join(buildDir, 'index.html')));
+
 app.listen(PORT, () => console.log(`cascope running on port ${PORT}`));
 
 module.exports = app;

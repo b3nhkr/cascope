@@ -1,144 +1,168 @@
 .tab-panel {
-  max-width: 960px;
+  max-width: 900px;
 }
 
 .tab-title {
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 24px;
-  color: #f1f5f9;
+  letter-spacing: -0.3px;
+  color: #111827;
+  margin-bottom: 6px;
 }
 
 .tab-description {
-  color: #94a3b8;
-  margin-bottom: 24px;
+  color: #9ca3af;
+  margin-bottom: 32px;
   font-size: 14px;
+  font-weight: 400;
 }
 
 .section-title {
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #64748b;
-  margin: 32px 0 12px;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin: 36px 0 12px;
 }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 16px;
   margin-bottom: 8px;
+  margin-top: 24px;
 }
 
 .card {
-  background: #1a1d27;
-  border: 1px solid #2d3148;
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
   border-radius: 10px;
-  padding: 20px;
+  padding: 20px 24px;
 }
 
 .card-label {
-  font-size: 12px;
-  color: #64748b;
-  margin-bottom: 8px;
+  font-size: 11px;
+  color: #9ca3af;
+  margin-bottom: 10px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.07em;
 }
 
 .card-value {
   font-size: 28px;
   font-weight: 700;
-  color: #f1f5f9;
+  color: #111827;
+  letter-spacing: -0.5px;
 }
 
 .data-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 13.5px;
 }
 
 .data-table th {
   text-align: left;
-  padding: 10px 12px;
-  color: #64748b;
-  font-weight: 500;
-  border-bottom: 1px solid #2d3148;
-  font-size: 12px;
+  padding: 10px 14px;
+  color: #9ca3af;
+  font-weight: 600;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.07em;
 }
 
 .data-table td {
-  padding: 12px;
-  border-bottom: 1px solid #1e2235;
-  color: #cbd5e1;
+  padding: 13px 14px;
+  border-bottom: 1px solid #f9fafb;
+  color: #374151;
+  font-size: 13.5px;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
 }
 
 .data-table a {
-  color: #7c6aff;
+  color: #10b981;
   text-decoration: none;
+  font-weight: 500;
+}
+
+.data-table a:hover {
+  color: #059669;
 }
 
 .badge {
   display: inline-block;
   padding: 2px 10px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 600;
 }
 
-.badge-green { background: #14532d; color: #86efac; }
-.badge-yellow { background: #713f12; color: #fde68a; }
-.badge-red { background: #7f1d1d; color: #fca5a5; }
+.badge-green  { background: #d1fae5; color: #065f46; }
+.badge-yellow { background: #fef3c7; color: #92400e; }
+.badge-red    { background: #fee2e2; color: #991b1b; }
 
 .audit-form {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 24px;
 }
 
 .input {
   flex: 1;
   padding: 10px 14px;
-  background: #1a1d27;
-  border: 1px solid #2d3148;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
-  color: #e2e8f0;
-  font-size: 14px;
+  color: #111827;
+  font-size: 13.5px;
+  font-family: inherit;
   outline: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.input::placeholder {
+  color: #c0c7d1;
 }
 
 .input:focus {
-  border-color: #7c6aff;
+  border-color: #10b981;
+  background: #ffffff;
 }
 
 .btn-primary {
-  padding: 10px 24px;
-  background: #7c6aff;
-  color: #fff;
+  padding: 10px 22px;
+  background: #10b981;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
   transition: background 0.15s;
+  white-space: nowrap;
 }
 
-.btn-primary:hover { background: #6b58f0; }
-.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary:hover { background: #059669; }
+.btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
 
 .alert {
   padding: 12px 16px;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 13.5px;
   margin-bottom: 16px;
 }
 
 .alert-error {
-  background: #7f1d1d;
-  color: #fca5a5;
-  border: 1px solid #991b1b;
+  background: #fef2f2;
+  color: #ef4444;
+  border: 1px solid #fecaca;
 }
 
 .audit-result { margin-top: 8px; }
@@ -151,13 +175,13 @@
 }
 
 .issue-item {
-  padding: 10px 14px;
-  background: #1a1d27;
-  border: 1px solid #2d3148;
+  padding: 11px 16px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
   border-left: 3px solid #f59e0b;
-  border-radius: 6px;
-  font-size: 14px;
-  color: #cbd5e1;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #374151;
 }
 
 .inline-form {
@@ -165,6 +189,7 @@
   gap: 10px;
   margin-bottom: 8px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .input-sm {
@@ -175,59 +200,66 @@
   display: flex;
   gap: 10px;
   margin-bottom: 8px;
+  margin-top: 16px;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .select {
   padding: 10px 14px;
-  background: #1a1d27;
-  border: 1px solid #2d3148;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
-  color: #e2e8f0;
-  font-size: 14px;
+  color: #374151;
+  font-size: 13.5px;
+  font-family: inherit;
   outline: none;
   cursor: pointer;
+  transition: border-color 0.15s;
 }
 
 .select:focus {
-  border-color: #7c6aff;
+  border-color: #10b981;
 }
 
 .btn-ghost {
   padding: 10px 16px;
   background: none;
-  border: 1px solid #2d3148;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
-  color: #94a3b8;
-  font-size: 14px;
+  color: #6b7280;
+  font-size: 13.5px;
+  font-family: inherit;
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
 }
 
 .btn-ghost:hover {
-  color: #e2e8f0;
-  border-color: #64748b;
+  color: #111827;
+  border-color: #d1d5db;
 }
 
 .empty {
-  color: #475569;
+  color: #c0c7d1;
   font-style: italic;
-  padding: 16px 12px;
+  padding: 20px 14px;
+  font-size: 13.5px;
 }
 
 .btn-delete {
   padding: 4px 12px;
   background: none;
-  border: 1px solid #3f1f1f;
+  border: 1px solid #e5e7eb;
   border-radius: 6px;
-  color: #f87171;
+  color: #9ca3af;
   font-size: 12px;
+  font-family: inherit;
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
 .btn-delete:hover {
-  background: #7f1d1d;
-  border-color: #991b1b;
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #ef4444;
 }
